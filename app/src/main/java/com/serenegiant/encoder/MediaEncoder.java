@@ -323,7 +323,8 @@ LOOP:	while (mIsCapturing) {
 				// get output format from codec and pass them to muxer
 				// getOutputFormat should be called after INFO_OUTPUT_FORMAT_CHANGED otherwise crash.
                 final MediaFormat format = mMediaCodec.getOutputFormat(); // API >= 16
-               	mTrackIndex = muxer.addTrack(format);
+               	Log.d("shimada","========muxer:"+muxer);
+		mTrackIndex = muxer.addTrack(format);
                	mMuxerStarted = true;
                	if (!muxer.start()) {
                		// we should wait until muxer is ready
